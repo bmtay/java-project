@@ -12,7 +12,7 @@ node('linux') {
     stage('Deploy') {
         sh 'aws s3 cp rectangle-${env.BUILD_NUMBER}.jar s3://taylor-seis665demo'
     }
-    stage('Report) {
+    stage('Report') {
         sh 'aws cloudformation describe-stack-resources --stack-name jenkins --region us-east-1'
     }
 }
